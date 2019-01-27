@@ -1,0 +1,73 @@
+.inline-display {
+  display: inline-block;
+  padding: 5px;
+}
+
+.margin-size {
+  margin-top: 20px
+}
+
+td {
+  padding: 10px;
+}
+
+.field-spacing {
+  padding: 15px;
+}
+
+.button-container {
+  text-align: right;
+  width: 100%;
+}
+
+.btn-save {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.first-row{
+    background-color: white;
+    margin-bottom: 0.5%;
+}
+
+.second-row {
+    background-color: white;
+    height: 350px;
+}
+
+.form-1 {
+    padding-bottom: 2%;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-left-50 {
+  margin-left: 50px;
+}
+
+.padding-left-50 {
+  padding-left: 50px;
+}
+
+.background-white {
+  background-color: white;
+  color: darkcyan;
+}
+/* Material Css*/
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+/* Material CSS */

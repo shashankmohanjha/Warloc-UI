@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <!-- <li class="nav-title">Nav Title</li> -->
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="navigation-active" [routerLink]="['./user-mgmnt']"><i
+                  class="nav-icon cui-speedometer"></i>User
+                Management</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLinkActive="navigation-active" [routerLink]=""><i class="nav-icon cui-speedometer"></i>Lock
+                Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="navigation-active" [routerLink]=""><i class="nav-icon cui-speedometer"></i>Date
+                Fixes</a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="col-sm-10 background-white">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

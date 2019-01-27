@@ -1,0 +1,129 @@
+<form>
+  <!-- First Row-->
+  <div class="row first-row">
+    <div class="form-1 padding-left-50" style="width: 500px;">
+      <div class="example-button-row margin-top-20">
+        <button class="margin-right-20" mat-raised-button color="primary">Existing User</button>
+        <button class="background-white" mat-raised-button color="primary">Add New User</button>
+      </div>
+
+      <!--   
+      <div class="margin-size">
+        <span class="field-spacing"><strong>Active Directory Login:</strong></span>
+        <input type="text" name="pricipalName" [(ngModel)]="pricingUser.userPrincipalName">
+      </div>
+      <div class="margin-size">
+        <span class="field-spacing"><strong>Display Name: </strong></span>
+        <input type="text" name="extendedName" [(ngModel)]="pricingUser.extendedName">
+      </div>
+      <div class="margin-size">
+        <span class="field-spacing"><strong>Email: </strong></span>
+        <input type="text" name="email" [(ngModel)]="pricingUser.email">
+      </div>
+      <div class="margin-size">
+        <span class="field-spacing"><strong>Last Login Date: </strong></span>
+        <input disabled type="text" name="lastLoginDate" [(ngModel)]="pricingUser.lastLoginDate">
+      </div> -->
+
+      <div class="example-container margin-top-20">
+        <mat-form-field>
+          <mat-select name="user" placeholder="select user" [(ngModel)]="pricingUser.id" (change)="onUserChange()"
+            placeholder="select user">
+            <mat-option *ngFor="let user of pricingUsers" [value]="user.id">{{user.id === -1 ? "new user" :
+              user.extendedName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Warloc Username:" name="userName" type="text" [(ngModel)]="pricingUser.name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Warloc Username:" name="userName" type="text" [(ngModel)]="pricingUser.name">
+          </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!--Second Row-->
+  <div class="row second-row padding-left-50">
+    <div class="col-sm-4">
+      <div class="inline-display">
+        <span class="field-spacing"><strong>Available Roles</strong></span>
+        <!-- <select name="userRole" placeholder="select role" [(ngModel)]="pricingUser.roleIds[0]"> -->
+        <!--  <select multiple data-live-search="true" name="userRole"
+            placeholder="select role" [(ngModel)]="pricingUser.roleIds">
+            <option *ngFor="let role of roles" [value]="role.id">
+              {{role.extendedName}}
+            </option>
+          </select> -->
+        <mat-selection-list style="height: 300px; overflow-y: auto;">
+          <mat-list-option *ngFor="let role of roles">
+            {{role.extendedName}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="margin-size">
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Country of Rental</strong></td>
+              <div style="margin-left: 30px">
+                <td></td>
+                <td><strong>Access</strong></td>
+                <td></td>
+              </div>
+            </tr>
+            <tr>
+              <td></td>
+              <div style="margin-left: 30px">
+                <td><strong>Full</strong></td>
+                <td><strong>Read</strong></td>
+                <td><strong>None</strong></td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+        <div style="height: 200px; overflow-y: auto;">
+          <table>
+            <tbody>
+              <tr *ngFor="let country of countries">
+                <td>{{country.name}}</td>
+
+                <td><input [ngModel]="corPermissions[pricingUser.id][country.id]" type="radio" (click)="setCORAccessValue(country.id, 'read/write')"
+                    value="read/write" name="{{country.id}}"></td>
+                <td><input [ngModel]="corPermissions[pricingUser.id][country.id]" type="radio" (click)="setCORAccessValue(country.id, 'readOnly')"
+                    value="readOnly" name="{{country.id}}">
+                </td>
+                <td><input [ngModel]="corPermissions[pricingUser.id][country.id]==null? 'deny': corPermissions[pricingUser.id][country.id]"
+                    (click)="setCORAccessValue(country.id, 'deny')" type="radio" value="deny" name="{{country.id}}">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="btn-save" (click)="saveOrUpdateUser()">Save</button>
+    <button class="btn-save" (click)="deleteUser()">Remove</button>
+  </div>
+
+</form>
+
+<script>
+  $(document).ready(function () {
+    $('.mdb-select').materialSelect();
+  });
+
+</script>

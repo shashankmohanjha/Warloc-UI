@@ -1,0 +1,25 @@
+.header {
+    background-color: white;
+    color: darkcyan;
+    border: none;
+}
+
+ul li a {
+    color: blue;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    color: darkcyan;
+}
+
+.nav .nav-item{
+    margin-right: 20px !important;
+}
+
+.nav .nav-item a {
+    font-size: 30px;
+}
+

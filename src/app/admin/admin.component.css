@@ -1,0 +1,25 @@
+.color-white {
+  color: white;
+}
+
+.col-sm-2 {
+    padding-top: 0.5%;
+}
+.col-sm-2 a {
+  color: white;
+  font-size: 18px;
+}
+
+.col-sm-2 a:hover {
+  background-color: royalblue;
+}
+
+.col-sm-10 {
+  margin-top: 0.5%;
+}
+
+hr {
+  margin: 0;
+}
+
+

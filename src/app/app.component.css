@@ -1,0 +1,13 @@
+.home {
+    /* margin: 0% 15% 0% 15%; */
+}
+
+.app-body {
+    background-color: rgb(5, 54, 95);
+}
+
+hr {
+    border-top: 3px solid black;
+    margin-bottom: 1px;
+    margin-top: 0;
+}
